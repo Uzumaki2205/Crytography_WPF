@@ -1,0 +1,97 @@
+﻿<Window x:Class="Crytography_WPF.ExitForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Crytography_WPF"
+        mc:Ignorable="d"
+        
+         WindowStyle="None"
+         WindowStartupLocation="CenterScreen"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="ExitForm" Height="250" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="0 10 10 0">
+            <Grid HorizontalAlignment="Right" Margin="0 0 20 0">
+                <DockPanel>
+                    <!--<Button Click="btn_CommandClick"
+                            Tag="btnMinimize"
+                            Margin="0 0 6 0"         
+                            BorderBrush="LightCyan"
+                            Background="LightCyan"
+                            Height="20" Width="20" 
+                            Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}">
+                    </Button>
+                    <Button Click="btn_CommandClick"
+                            Tag="btnMaximize"
+                            Margin="0 0 6 0"
+                            BorderBrush="Yellow"
+                            Background="Yellow"
+                            Height="20" Width="20" Opacity="0.8"
+                            Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}">
+                    </Button>-->
+                    <Button Click="btn_CommandClick"
+                            Tag="btnClose" 
+                            Height="20" Width="20"
+                            BorderBrush="OrangeRed"
+                            Opacity="0.8"
+                            Background="OrangeRed"
+                            Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}">
+                    </Button>
+                </DockPanel>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="425*"/>
+                <ColumnDefinition Width="69*"/>
+            </Grid.ColumnDefinitions>
+            <materialDesign:Card
+                Margin="30,30,29.6,29.6"
+                Height="auto"
+                Background="{DynamicResource MaterialDesignCardBackground}"
+                Foreground="{DynamicResource MaterialDesignLightForeground}"
+                Padding="8"
+                UniformCornerRadius="6" Grid.ColumnSpan="2">
+                <Grid x:Name="gridContentExit">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock TextWrapping="Wrap" Grid.Row="0"
+                               Margin="0 20 0 0"
+                               FontSize="20" HorizontalAlignment="Center"
+                           Text="Bạn có muốn thoát ra không??">
+                    </TextBlock>
+                    <DockPanel Grid.Row="1" Margin="0 30 0 0"
+                               HorizontalAlignment="Center">
+                        <Button Click="btn_CommandClick" 
+                                Tag="btnExit"
+                            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                            Width="100" Margin="0 0 10 0"
+                            ToolTip="Exit" Content="Thoát">
+                        </Button>
+                        <Button Click="btn_CommandClick"
+                            Tag ="btnCancel"
+                            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                            Width="100" Margin="10 0 0 0"
+                            ToolTip="Cancel" Content="Huỷ">
+                        </Button>
+                    </DockPanel>
+
+                </Grid>
+            </materialDesign:Card>
+        </Grid>
+    </Grid>
+</Window>
