@@ -17,7 +17,7 @@
      TextOptions.TextFormattingMode="Ideal"
      TextOptions.TextRenderingMode="Auto"
      FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="MainWindow" Height="420" Width="820">
+        Title="MainWindow" Height="420" Width="580">
     <Grid>
         <Border CornerRadius="20"
             Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="5">
@@ -30,7 +30,7 @@
                 <Grid Grid.Row="0">
                     <local:ControlBar MouseDown="ControlBar_MouseDown" />
                 </Grid>
-                <Grid Grid.Row="1" Name="Grid_Content" Margin="20">
+                <Grid Grid.Row="1" Name="Grid_Content" Margin="20" HorizontalAlignment="Center">
                     <DockPanel>
                         <materialDesign:Card 
                         Background="#03a9f4" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
@@ -67,7 +67,7 @@
                             <StackPanel>
                                 <TextBlock Margin="16 16 16 4"
                                 Style="{StaticResource  MaterialDesignHeadline6TextBlock}"
-                                Text="Caesar" TextAlignment="Center">
+                                Text="RSA" TextAlignment="Center">
                                 </TextBlock>
                                 <Separator Style="{StaticResource MaterialDesignLightSeparator}" />
                                 <TextBlock Margin="16 0 16 8"
@@ -75,22 +75,21 @@
                                 HorizontalAlignment="Center"
                                 TextAlignment="Center"
                                 Style="{StaticResource MaterialDesignBody2TextBlock}">
-                                Mật mã Caesar là một dạng của <LineBreak />
-                                mật mã thay thế, trong đó mỗi <LineBreak /> 
-                                ký tự trong văn bản được thay thế <LineBreak />
-                                bằng một ký tự cách nó một đoạn <LineBreak /> 
-                                trong bảng chữ cái để tạo thành <LineBreak /> 
-                                bản mã.
+                                Bài tập về nhà thầy giao =))<LineBreak />
+                                <LineBreak /> 
+                                <LineBreak />
+                                <LineBreak /> 
+                                <LineBreak /> 
                                 </TextBlock>
-                                <Button Name="btnCrypt"
+                                <Button Name="btnRSA" Click="btnRSA_Click"
                                 Style="{StaticResource MaterialDesignFlatAccentBgButton}"
                                 Width="auto"
-                                ToolTip="Go to method Ceasar"
+                                ToolTip="Go to method RSA"
                                     Content="GO">
                                 </Button>
                             </StackPanel>
                         </materialDesign:Card>
-                        <materialDesign:Card 
+                        <!--<materialDesign:Card 
                         Background="#03a9f4" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
                         Width="250">
                             <StackPanel>
@@ -118,7 +117,7 @@
                                     Content="GO">
                                 </Button>
                             </StackPanel>
-                        </materialDesign:Card>
+                        </materialDesign:Card>-->
                     </DockPanel>
                 </Grid>
                 <Grid Grid.Row="2" Name="Grid_Footer">

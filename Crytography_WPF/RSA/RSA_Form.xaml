@@ -1,0 +1,130 @@
+﻿<Window x:Class="Crytography_WPF.RSA.RSA_Form"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Crytography_WPF.RSA"
+        mc:Ignorable="d"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:crytography_wpf="clr-namespace:Crytography_WPF"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="RSA" Height="550" Width="500">
+    <Grid>
+        <Border CornerRadius="20"
+            Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <crytography_wpf:ControlBar MouseDown="ControlBar_MouseDown" />
+                </Grid>
+
+                <Grid Grid.Row="1" Name="Grid_Content" Margin="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70px"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    
+                    <Grid Grid.Row="0">
+                        <DockPanel> 
+                            <TextBox Margin="10" x:Name="pText" Text="1"
+                                materialDesign:HintAssist.Hint="Nhập p"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                                materialDesign:HintAssist.FloatingScale="0.50"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                FontSize="24" />
+                            <TextBox Margin="10" x:Name="qText" Text="1"
+                                materialDesign:HintAssist.Hint="Nhập q"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                                materialDesign:HintAssist.FloatingScale="0.50"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                FontSize="24" />
+                            
+                            <ComboBox Margin="10" x:Name="cbxListE"
+                                materialDesign:HintAssist.Hint="e"
+                                MinWidth="72" FontSize="24" 
+                                Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                                <ComboBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <VirtualizingStackPanel />
+                                    </ItemsPanelTemplate>
+                                </ComboBox.ItemsPanel>
+                            </ComboBox>
+                            <TextBox Margin="10" x:Name="code" 
+                                Visibility="Hidden" IsReadOnly="True"
+                                materialDesign:HintAssist.Hint="RSA"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                                materialDesign:HintAssist.FloatingScale="0.50"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                FontSize="24" />
+                            <StackPanel>
+                                <Button x:Name="btnGetE" Click="btnGetE_Click"
+                                Style="{StaticResource MaterialDesignRaisedButton}"
+                                Width="100" Margin="0 0 0 5"
+                                ToolTip="Get E"
+                                Content="Get E">
+                                </Button>
+                                <Button x:Name="btnOK" Click="btnOK_Click"
+                                Style="{StaticResource MaterialDesignRaisedButton}"
+                                Width="100"
+                                ToolTip="Calculator"
+                                Content="OK">
+                                </Button>
+                            </StackPanel>
+                            
+                        </DockPanel>
+                    </Grid>
+                    <Grid Grid.Row="1" Margin="0 10 0 0">
+                        <DataGrid Name="dtgCrypt"
+                            Margin="0 8 0 0"
+                            ItemsSource="{Binding tableCrypt}"
+                            CanUserSortColumns="False"
+                            CanUserAddRows="True">
+                            <!--<DataGrid.Columns>
+                                <DataGridTextColumn Header="d" Binding="{Binding D}"/>
+                                <DataGridTextColumn Header="r1" Binding="{Binding R1}"/>
+                                <DataGridTextColumn Header="r1" Binding="{Binding R2}"/>
+                                <DataGridTextColumn Header="r" Binding="{Binding R}"/>
+                                <DataGridTextColumn Header="t1" Binding="{Binding T1}"/>
+                                <DataGridTextColumn Header="t2" Binding="{Binding T2}"/>
+                                <DataGridTextColumn Header="t" Binding="{Binding T}"/>
+                            </DataGrid.Columns>-->
+                        </DataGrid>
+                    </Grid>
+
+                </Grid>
+                
+                <Grid Grid.Row="2" Name="Grid_Footer" Margin="20">
+                    <StackPanel>
+                        <TextBlock Margin="20 20 20 0" HorizontalAlignment="Center"
+                            Style="{StaticResource MaterialDesignBody2TextBlock}">
+                            Hướng Dẫn Sử Dụng
+                        </TextBlock>
+                        <TextBlock HorizontalAlignment="Center"
+                            Style="{StaticResource MaterialDesignBody2TextBlock}">
+                            Để không bị sai trong tính toán, phải get lại E
+                        </TextBlock>
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20"
+                            Style="{StaticResource MaterialDesignBody2TextBlock}">
+                            khi thay đổi p và q.
+                        </TextBlock>
+                        
+                        <crytography_wpf:Footer />
+                    </StackPanel>
+                    
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

@@ -1,4 +1,5 @@
 ﻿using Crytography_WPF.Caesar;
+using Crytography_WPF.RSA;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,6 +41,13 @@ namespace Crytography_WPF
         {
             if (e.LeftButton == MouseButtonState.Pressed)
                 this.DragMove();
+        }
+
+        private void btnRSA_Click(object sender, RoutedEventArgs e)
+        {
+            RSA_Form fr = new RSA_Form();
+            fr.Show();
+            this.WindowState = WindowState.Minimized;
         }
     }
 }
